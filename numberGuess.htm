@@ -1,0 +1,66 @@
+<html>
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127184549-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127184549-1');
+</script>
+  </head>
+  
+  <body>
+  <br/><hr/>
+<p align="center"><font size="16">Угадаи Цифру - Игра<i>Сделала Игру Аделя Макаранка</i></font>
+<br/><hr/></p><p align="center">
+<input type="button" value="Новая Игра" onclick="newGame()"></button>
+<br/><br/><br/><br/><p/>
+
+<div id="tryHigher" style="display:none"><p align="center"><font size="12">Еще Нет. Попробуите поболше цифру.</font></p></div>
+<div id="tryLower" style="display:none"><p align="center"><font size="12">Еще Нет. Попробуите поменше цифру.</font></p></div>
+<div id="yay" style="display:none"><p align="center"><font size="18" color="red">Ура!! Вы угадали цифру!</font></p></div>
+<p align="center">
+Enter your guess:<input id="guess" maxlength="5"></input>
+<input type="button" value="Submit" onclick="submittedNumber(document.getElementById('guess').value);"/>
+<br/><br/>
+<i>Цифра должна быть между 1 - 20.</i>
+
+<script>
+
+let numberToGuess = Math.floor(Math.random() * 20) + 1;
+
+function newGame(){
+  numberToGuess = Math.floor(Math.random() * 20) + 1;
+  document.getElementById("tryHigher").style.display="none";
+  document.getElementById("tryLower").style.display="none";
+  document.getElementById("yay").style.display="none";
+  document.getElementById("guess").value = "";
+  document.getElementById("guess").focus();
+}
+
+function submittedNumber(numberAsked){ //alert('' + numberAsked + ' ' + numberToGuess + '-=-' + (numberToGuess < numberAsked));
+  if (numberAsked > numberToGuess){
+    document.getElementById("tryLower").style.display="inline";
+    document.getElementById("tryHigher").style.display="none";
+    document.getElementById("yay").style.display="none";
+    document.getElementById("guess").value = "";
+    document.getElementById("guess").focus();
+  }
+  else if (numberAsked < numberToGuess){
+    document.getElementById("tryHigher").style.display="inline";
+    document.getElementById("tryLower").style.display="none";
+    document.getElementById("yay").style.display="none";
+    document.getElementById("guess").value = "";
+    document.getElementById("guess").focus();
+  }
+  else if (numberAsked == numberToGuess){
+    document.getElementById("tryHigher").style.display="none";
+    document.getElementById("tryLower").style.display="none";
+    document.getElementById("yay").style.display="inline";
+  }
+}
+</script>
+
+</p></body></html>
