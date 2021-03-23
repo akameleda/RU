@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { 
+background-color: lightgreen;
+}
+</style>
+</head>
+  <body>
+    <h1>
+      Cookie Clicker!
+    </h1>
+    <img src="AdeleCodeCookie.png" id="cookie image" style = "height : 200px" onclick = increment()>
+    <p>
+     Ты нажал на печение <span id="counter">0</span>раза
+    </p>
+    <button id = "gameReset" onclick = "reset()" >
+     Сбросить игру
+    </button>
+<button id = "auto" onclick = auto()>
+Автоматически Соберать Печение - ета кнопка покашто не работает!
+</button>
+  
+  </body>
+  <script>
+    var clicks = 0
+
+    function increment() {
+clicks = clicks + 1;
+counter.innerHTML = clicks;
+    }
+    function reset() {
+    clicks = 0;
+    counter.innerHTML = clicks
+    }
+  </script>
+<style>
+body{
+  color: magenta 
+}
+#counter{
+  color:blue
+}
+#gameReset{
+  color: orange
+}
+</style>
+  <h6>
+    ⚠️ Эта игра не всегда работает на телефонах.
+     </h6>
+  
+  <h6>
+    -Я нарисавала картинку печения
+     </h6>
+    
+    <h6>
+    -Зделано С Помосчеи
+  </h6>
+</html>
